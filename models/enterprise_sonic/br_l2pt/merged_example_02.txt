@@ -1,0 +1,51 @@
+# Using Merged
+#
+# Before State:
+# -------------
+# sonic# show running-configuration interface Ethernet 0
+# !
+# interface Ethernet0
+#  mtu 9100
+#  speed 400000
+#  fec RS
+#  unreliable-los auto
+#  no shutdown
+#  switchport l2proto-tunnel cdp Vlan 20, 40-50
+#  switchport l2proto-tunnel lacp Vlan 10-11
+#  switchport l2proto-tunnel lldp Vlan 10
+#  switchport l2proto-tunnel stp Vlan 25-26
+
+  - name: Modify interface L2PT configurations
+    dellemc.enterprise_sonic.sonic_br_l2pt:
+      config:
+        - name: Ethernet0
+          protocol:
+            LLDP:
+              vlan_ids:
+                - 12
+            LACP:
+              vlan_ids:
+                - 12
+            CDP:
+              vlan_ids:
+                - 20
+                - 45-60
+            STP:
+              vlan_ids:
+                - 20-21
+      state: merged
+
+# After State:
+# ------------
+# sonic# show running-configuration interface Ethernet0
+# !
+# interface Ethernet0
+#  mtu 9100
+#  speed 400000
+#  fec RS
+#  unreliable-los auto
+#  no shutdown
+#  switchport l2proto-tunnel cdp Vlan 20,40-60
+#  switchport l2proto-tunnel lacp Vlan 10-12
+#  switchport l2proto-tunnel lldp Vlan 10,12
+#  switchport l2proto-tunnel stp Vlan 20-21,25-26
