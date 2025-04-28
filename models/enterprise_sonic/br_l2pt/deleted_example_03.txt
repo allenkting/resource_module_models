@@ -18,11 +18,11 @@
     dellemc.enterprise_sonic.sonic_br_l2pt:
       config:
         - name: Ethernet0
-          protocol:
-            LACP:
+          bridge_l2pt_params:
+            - protocol: 'LACP'
               vlan_ids:
                 - 10-12
-            CDP
+            - protocol: 'CDP'
               vlan_ids:
       state: deleted
 

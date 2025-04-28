@@ -28,15 +28,15 @@
     dellemc.enterprise_sonic.sonic_br_l2pt:
       config:
         - name: Ethernet0
-          protocol:
-            LLDP:
+          bridge_l2pt_params:
+            - protocol: 'LLDP'
               vlan_ids:
                 - 10-12
-            LACP:
+            - protocol: 'LACP'
               vlan_ids:
                 - 8
                 - 12-14
-            CDP:
+            - protocol: 'CDP'
               vlan_ids:
                 - 20-45
       state: replaced
