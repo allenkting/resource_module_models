@@ -46,6 +46,29 @@ DOCUMENTATION: |
           description:
             - Enable/disable logging neighbor up/down and reset reason.
           type: bool
+        graceful_restart:
+          description:
+            - Configure graceful restart
+          type: dict
+          suboptions:
+            enabled:
+              description:
+                - Enable graceful restart
+              type: bool
+            restart_time:
+              description:
+                - Configures restart-time.
+                - The range is from 0 to 3600.
+              type: int
+            stale_routes_time:
+              description:
+                - Configures stale-routes-time
+                - The range is from 0 to 3600.
+              type: int
+            preserve_fw_state:
+              description:
+                - Configures preserve-fw-state
+              type: bool
         bestpath:
           description:
             - Configures the BGP bestpath.
