@@ -24,7 +24,6 @@
 #  switchport l2proto-tunnel lldp Vlan 100
 #  switchport l2proto-tunnel stp Vlan 100-150
 
-
   - name: Delete all interface L2PT configurations
     dellemc.enterprise_sonic.sonic_br_l2pt:
       config:
