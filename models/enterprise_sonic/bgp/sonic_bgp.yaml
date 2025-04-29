@@ -58,12 +58,12 @@ DOCUMENTATION: |
             restart_time:
               description:
                 - Configures restart-time.
-                - The range is from 0 to 3600.
+                - The range is from 1 to 3600.
               type: int
             stale_routes_time:
               description:
                 - Configures stale-routes-time
-                - The range is from 0 to 3600.
+                - The range is from 1 to 3600.
               type: int
             preserve_fw_state:
               description:

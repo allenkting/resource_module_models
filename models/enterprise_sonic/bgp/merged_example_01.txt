@@ -14,6 +14,9 @@
 #        - bgp_as: 4
 #          router_id: 10.2.2.4
 #          log_neighbor_changes: False
+#          graceful_restart:
+#            enabled: True
+#            preserve_fw_state: True
 #          bestpath:
 #            as_path:
 #              confed: True
@@ -58,6 +61,8 @@
 #!
 #router bgp 4
 # router-id 10.2.2.4
+# graceful-restart enable
+# graceful-restart preserve-fw-state
 # bestpath as-path ignore
 # bestpath as-path confed
 # bestpath med missing-as-worst confed

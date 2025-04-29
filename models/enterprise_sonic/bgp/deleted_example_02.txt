@@ -9,6 +9,7 @@
 # log-neighbor-changes
 #!
 #router bgp 11 vrf VrfCheck2
+# graceful-restart enable
 # log-neighbor-changes
 # bestpath as-path ignore
 # bestpath med missing-as-worst confed

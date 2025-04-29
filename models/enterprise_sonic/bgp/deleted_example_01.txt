@@ -16,6 +16,9 @@
 #!
 #router bgp 4
 # router-id 10.2.2.4
+# graceful-restart enable
+# graceful-restart restart-time 1
+# graceful-restart stalepath-time 500
 # bestpath as-path ignore
 # bestpath as-path confed
 # bestpath med missing-as-worst confed
@@ -28,6 +31,9 @@
 #        - bgp_as: 4
 #          router_id: 10.2.2.4
 #          log_neighbor_changes: False
+#          graceful_restart:
+#            stale_routes_time: 500
+#            restart_time: 1
 #          bestpath:
 #            as_path:
 #              confed: True
@@ -67,6 +73,7 @@
 # bestpath compare-routerid
 #!
 #router bgp 4
+# graceful-restart enable
 # log-neighbor-changes
 # bestpath compare-routerid
 #!
