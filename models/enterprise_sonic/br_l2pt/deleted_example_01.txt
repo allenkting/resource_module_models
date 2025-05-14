@@ -1,6 +1,6 @@
-# Using Deleted
+# Using "deleted" state
 #
-# Before State:
+# Before state:
 # -------------
 # sonic# show running-configuration interface Ethernet 0
 # !
@@ -24,7 +24,7 @@
                 - 10-12
       state: deleted
 
-# After State:
+# After state:
 # ------------
 # sonic# show running-configuration interface Ethernet0
 # !
